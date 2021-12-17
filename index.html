@@ -1,0 +1,19 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+    	{% for cliente in persona_list %}
+    	    <h2> {{ cliente.nombre }} <b>{{ cliente.apellido }}</b> </h2>
+    	    <p> {{ cliente.nacimiento }} </p>
+            {% if cliente.edad %}
+             <p> {{ cliente.edad}} </p>
+             {% endif %} 
+           <div>
+            {% if cliente.foto %}
+                <img src="{{ cliente.foto.url }}" alt="{{ cliente.nombre }} {{cliente.apellido}}">
+                {% endif %} 
+            </div>
+        {% endfor %}
+    </body>
+</html> 
